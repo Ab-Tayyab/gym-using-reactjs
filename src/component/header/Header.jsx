@@ -3,6 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import { Box, Toolbar, IconButton, Typography, Menu, Container, Button, Tooltip, ListItem, List } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { Link } from 'react-router-dom'
 
 
 function ResponsiveAppBar() {
@@ -32,26 +33,29 @@ function ResponsiveAppBar() {
             }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                        <Typography
-                            variant="h4"
-                            noWrap
-                            component="a"
-                            href="/"
-                            sx={{
-                                mr: 2,
-                                paddingLeft: "30px",
-                                paddingRight: "50px",
-                                display: { xs: 'none', md: 'flex' },
-                                fontFamily: 'monospace',
-                                fontWeight: 700,
-                                letterSpacing: '0.5rem',
-                                color: 'white',
-                                textDecoration: 'none',
-                            }}
-                        >
-                            Bronix Club
-                        </Typography>
-
+                        <Link to="/" style={{
+                            textDecoration: "none"
+                        }}>
+                            <Typography
+                                variant="h4"
+                                noWrap
+                                component="a"
+                                href="/"
+                                sx={{
+                                    mr: 2,
+                                    paddingLeft: "30px",
+                                    paddingRight: "50px",
+                                    display: { xs: 'none', md: 'flex' },
+                                    fontFamily: 'monospace',
+                                    fontWeight: 700,
+                                    letterSpacing: '0.5rem',
+                                    color: 'white',
+                                    textDecoration: 'none',
+                                }}
+                            >
+                                Bronix Club
+                            </Typography>
+                        </Link>
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                             <IconButton
                                 size="large"
@@ -84,48 +88,72 @@ function ResponsiveAppBar() {
                                 <List onClick={handleCloseNavMenu} sx={{
                                     textAlign: "center"
                                 }}>
-                                    <ListItem>
-                                        Classes
-                                    </ListItem>
+                                    <Link to="/classes" style={{
+                                        textDecoration: "none",
+                                        color: "black"
+                                    }}>
+                                        <ListItem>
+                                            Classes
+                                        </ListItem>
+                                    </Link>
                                     <ListItem>
                                         Personal Workouts
                                     </ListItem>
-                                    <ListItem>
-                                        Price & Plans
-                                    </ListItem>
-                                    <ListItem>
-                                        Schdule
-                                    </ListItem>
+                                    <Link to="/price" style={{
+                                        textDecoration: "none",
+                                        color: "black"
+                                    }}>
+                                        <ListItem>
+                                            Price & Plans
+                                        </ListItem>
+                                    </Link>
+                                    <Link to="/schedule" style={{
+                                        textDecoration: "none",
+                                        color: "black"
+                                    }}>
+                                        <ListItem>
+                                            Schdule
+                                        </ListItem>
+                                    </Link>
                                 </List>
                             </Menu>
                         </Box>
-                        <Typography
-                            variant="h4"
-                            noWrap
-                            component="a"
-                            href=""
-                            sx={{
-                                mr: 2,
-                                display: { xs: 'flex', md: 'none' },
-                                flexGrow: 1,
-                                fontFamily: 'monospace',
-                                fontWeight: 700,
-                                letterSpacing: '0.1rem',
-                                color: 'inherit',
-                                textDecoration: 'none',
-                            }}
-                        >
-                            Bronix Club
-                        </Typography>
+                        <Link to="/" style={{
+                            textDecoration: "none",
+                            color: "white"
+                        }}>
+                            <Typography
+                                variant="h4"
+                                noWrap
+                                component="a"
+                                href=""
+                                sx={{
+                                    mr: 2,
+                                    display: { xs: 'flex', md: 'none' },
+                                    flexGrow: 1,
+                                    fontFamily: 'monospace',
+                                    fontWeight: 700,
+                                    letterSpacing: '0.1rem',
+                                    color: 'inherit',
+                                    textDecoration: 'none',
+                                }}
+                            >
+                                Bronix Club
+                            </Typography>
+                        </Link>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                            <Button sx={{
-                                color: "white",
-                                "&:hover": {
-                                    borderBottom: "1px solid white"
-                                }
+                            <Link to="/classes" style={{
+                                textDecoration: "none",
                             }}>
-                                Classes
-                            </Button>
+                                <Button sx={{
+                                    color: "white",
+                                    "&:hover": {
+                                        borderBottom: "1px solid white"
+                                    }
+                                }}>
+                                    Classes
+                                </Button>
+                            </Link>
                             <Button sx={{
                                 color: "white",
                                 "&:hover": {
@@ -134,22 +162,31 @@ function ResponsiveAppBar() {
                             }}>
                                 Personal Workouts
                             </Button>
-                            <Button sx={{
-                                color: "white",
-                                "&:hover": {
-                                    borderBottom: "1px solid white"
-                                }
+                            <Link to="/price" style={{
+                                textDecoration: "none"
                             }}>
-                                Price & Plans
-                            </Button>
-                            <Button sx={{
-                                color: "white",
-                                "&:hover": {
-                                    borderBottom: "1px solid white"
-                                }
+                                <Button sx={{
+                                    color: "white",
+                                    "&:hover": {
+                                        borderBottom: "1px solid white"
+                                    }
+                                }}>
+                                    Price & Plans
+                                </Button>
+                            </Link>
+                            <Link to="/schedule" style={{
+                                textDecoration: "none",
+                                color: "black"
                             }}>
-                                Schdule
-                            </Button>
+                                <Button sx={{
+                                    color: "white",
+                                    "&:hover": {
+                                        borderBottom: "1px solid white"
+                                    }
+                                }}>
+                                    Schdule
+                                </Button>
+                            </Link>
                         </Box>
 
 
@@ -176,8 +213,18 @@ function ResponsiveAppBar() {
                                 onClose={handleCloseUserMenu}
                             >
                                 <List onClick={handleCloseUserMenu}>
-                                    <ListItem textAlign="center">Sign Up</ListItem>
-                                    <ListItem textAlign="center">Sign In</ListItem>
+                                    <Link to="/signup" style={{
+                                        textDecoration: "none",
+                                        color: "black"
+                                    }}>
+                                        <ListItem textAlign="center">Sign Up</ListItem>
+                                    </Link>
+                                    <Link to="/signin" style={{
+                                        textDecoration: "none",
+                                        color: "black"
+                                    }}>
+                                        <ListItem textAlign="center">Sign In</ListItem>
+                                    </Link>
                                 </List>
                             </Menu>
 

@@ -1,6 +1,7 @@
 import { Typography, Box, Button } from '@mui/material'
 import React from 'react'
-import bg from '../../images/background3.png'
+import bg from '../../images/home.png'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     return (
@@ -36,15 +37,19 @@ const Home = () => {
                         </Typography>
                     </Box>
                     <Box>
-                        <Button sx={{
-                            background: "red",
-                            color: "white",
-                            marginTop: "30px",
-                            "&:hover": {
-                                background: "red",
-                                borderBottom: "2px solid white"
-                            }
-                        }}>Let's Get Started</Button>
+                        <Link to='/price' style={{
+                            textDecoration: "none",
+                        }}>
+                            <Button sx={{
+                                background: "#f40606",
+                                color: "white",
+                                marginTop: "30px",
+                                "&:hover": {
+                                    background: "red",
+                                    borderBottom: "2px solid white"
+                                }
+                            }}>Let's Get Started</Button>
+                        </Link>
                     </Box>
                 </Box>
             </Box>
