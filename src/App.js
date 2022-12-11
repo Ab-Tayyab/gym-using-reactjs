@@ -11,6 +11,8 @@ import Priceandplans from './component/price and plans/Priceandplans'
 import AllClasses from "./component/classes/AllClasses";
 import Schedule from "./component/schedule/Schedule";
 import { ToastContainer } from "react-toastify";
+import Workout from "./component/personal workout/Workout";
+import Details from "./component/detail/detail";
 function App() {
   return (
     <div className="App">
@@ -29,6 +31,8 @@ function App() {
           <Route path="/price" element={<Priceandplans />} />
           <Route path="/classes" element={<AllClasses />} />
           <Route path="/schedule" element={<Schedule />} />
+          <Route path="/workout" element={<Workout />} />
+          <Route path="/detail:matchid" element={<Details />} />
         </Routes>
         <Footer />
         <ToastContainer />

@@ -154,14 +154,18 @@ function ResponsiveAppBar() {
                                     Classes
                                 </Button>
                             </Link>
-                            <Button sx={{
-                                color: "white",
-                                "&:hover": {
-                                    borderBottom: "1px solid white"
-                                }
+                            <Link to="/workout" style={{
+                                textDecoration: "none",
                             }}>
-                                Personal Workouts
-                            </Button>
+                                <Button sx={{
+                                    color: "white",
+                                    "&:hover": {
+                                        borderBottom: "1px solid white"
+                                    }
+                                }}>
+                                    Personal Workouts
+                                </Button>
+                            </Link>
                             <Link to="/price" style={{
                                 textDecoration: "none"
                             }}>

@@ -1,8 +1,8 @@
 import { Typography, Card, CardContent, Grid } from '@mui/material'
 import React from 'react'
-import ClassesApi from './classesApi'
+import mainApi from '../detail/mainApi'
 import Changes from '../ready changes/Changes'
-
+import { Link } from 'react-router-dom'
 
 const AllClasses = () => {
     return (
@@ -25,18 +25,20 @@ const AllClasses = () => {
                     padding: "40px",
                 }}>
                     {
-                        ClassesApi.map((item, i) => {
+                        mainApi.map((item, i) => {
                             return (
                                 <Grid item xs={12} sm={6} md={4}>
                                     <Card sx={{
                                         maxWidth: 620,
-                                        cursor: "pointer"
+                                        background: "black"
                                     }}>
                                         <img src={item.url} alt="" width="100%" height="350px" />
-                                        <CardContent>
-                                            <Typography gutterBottom variant="h5" component="div">
-                                                {item.name}
-                                            </Typography>
+                                        <CardContent cursor="pointer" >
+                                            <Link to={`/detail${item.id}`} style={{ textDecoration: "none" }}>
+                                                <Typography gutterBottom variant="h5" component="div" color="white">
+                                                    {item.name}
+                                                </Typography>
+                                            </Link>
                                         </CardContent>
                                     </Card>
                                 </Grid>

@@ -1,5 +1,4 @@
 import React from 'react'
-import bg from '../../images/about.png'
 import { Typography, Box, Button } from '@mui/material'
 
 
@@ -8,7 +7,7 @@ const About = () => {
         <div >
             <Box sx={{
                 marginTop: "40px",
-                backgroundImage: `url(${bg})`,
+                backgroundImage: `url(${"images/about.png"})`,
                 flexGrow: "1",
                 width: "100%",
                 minHeight: '30em',

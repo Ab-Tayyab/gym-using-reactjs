@@ -1,6 +1,5 @@
 import { Typography, Box, Button } from '@mui/material'
 import React from 'react'
-import bg from '../../images/home.png'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
@@ -9,7 +8,7 @@ const Home = () => {
             paddingTop: "46px"
         }}>
             <Box sx={{
-                backgroundImage: `url(${bg})`,
+                backgroundImage: `url(${"images/home.png"})`,
                 flexGrow: "1",
                 paddingTop: "64px",
                 paddingBottom: "20px",

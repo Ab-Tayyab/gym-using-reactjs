@@ -1,7 +1,8 @@
 import { Typography, Button, Card, CardContent, Grid } from '@mui/material'
 import { useState } from 'react';
 import React from 'react'
-import ClassesApi from './classesApi'
+import mainApi from '../detail/mainApi'
+
 
 const imagePerRow = 4;
 const Classes = () => {
@@ -23,7 +24,7 @@ const Classes = () => {
         padding: "40px",
       }}>
         {
-          ClassesApi?.slice(0, next)?.map((item, i) => {
+          mainApi?.slice(0, next)?.map((item, i) => {
             return (
               <Grid item xs={12} sm={6} md={6}>
                 <Card sx={{
@@ -42,7 +43,7 @@ const Classes = () => {
           })
         }
       </Grid>
-      {next < ClassesApi?.length && (
+      {next < mainApi?.length && (
         <Button
           onClick={handleMoreImage}
           sx={{

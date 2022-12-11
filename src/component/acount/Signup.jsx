@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import { Typography, Box } from '@mui/material'
 import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import './acount.css'
 
 const Signup = () => {
@@ -16,9 +17,9 @@ const Signup = () => {
         <div style={{
             paddingTop: "50px",
             paddingBottom: "50px",
-            background:"black",
-            color:"white",
-            margin:"67px 0px 2px 0px"
+            background: "black",
+            color: "white",
+            margin: "67px 0px 2px 0px"
         }}>
             <Typography variant='h3' sx={{
                 mb: "20px",
@@ -30,7 +31,7 @@ const Signup = () => {
                 margin: "auto"
             }}>
                 <form onSubmit={handleSubmit(onSubmit)} style={{
-                    padding:"0px 50px 0px 50px"
+                    padding: "0px 50px 0px 50px"
                 }}>
                     <label>Name</label>
                     <input {...register("firstName", { required: true, maxLength: 20 })} />

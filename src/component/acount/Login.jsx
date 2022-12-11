@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import { Typography, Box } from '@mui/material'
 import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import './acount.css'
 
 const Login = () => {
